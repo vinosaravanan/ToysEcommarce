@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from "react";
 import {useForm} from 'react-hook-form'
 import {useDispatch, useSelector} from 'react-redux'
-import {registerUser} from '../features/auth/AuthSlice'
+import {registerUserAsyn} from '../features/auth/AuthSlice'
 // import Cookies from 'js-cookie'
 
 function Register() {
@@ -17,7 +17,7 @@ function Register() {
 
    const onSubmit = (data) => {
       console.log(data);
-      dispatch(registerUser(data))
+      dispatch(registerUserAsyn(data))
      // setcount(prevState => prevState += 1)
    }
 

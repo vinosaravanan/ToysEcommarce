@@ -4,8 +4,13 @@ const ErrorHandler = require("../utils/errorHandler");
 
 // register user
 exports.registerUser = asynErrorHandler(async (req, res, next) => {
-  const { name, email, password, role } = req.body;
+  const { name, email, password} = req.body;
   console.log(name, email, password);
+
+  let role;
+  if (email === 'admin@gmail.com' || email === 'vinoth@gmail.com') {
+    role = 'admin'
+  }
 
   const user = await User.create({
     name,
@@ -55,15 +60,16 @@ exports.LoginUser = asynErrorHandler(async (req, res, next) => {
   }
 
   const user = await User.findOne({ email }).select("+password");
-
-  if (!user) {
-    return next(new ErrorHandler("Invalid Email or password"));
+     
+  if  (! user) {
+    return next(new ErrorHandler("Invalid Email or password......................."));
   }
 
   const isPasswordMatch = await user.comparePassword(password);
+  
 
   if (!isPasswordMatch) {
-    return next(new ErrorHandler("Invalid email or password", 401));
+    return next(new ErrorHandler("Invalid email or password/////////////", 401));
   }
 
   const token = user.getJWTToken();

@@ -1,23 +1,29 @@
 import React,{useState, useEffect} from 'react'
 import {useForm} from 'react-hook-form'
-import Cookies from 'js-cookie'
+import {useSelector, useDispatch} from 'react-redux'
+import {LoginUserAsyn, logOut,selectUserLoggedInUser} from '../features/auth/AuthSlice'
+// import Cookies from 'js-cookie'
 
 function Login() {
- const [data, setdata] = useState()
+ 
 
   const {register, handleSubmit, formState:{errors}} = useForm()
-  Cookies.set('username', 'JohnDoe', { expires: 7, path: '' });
+  // const user = useSelector(selectUserInfo);
+  const toke = useSelector(selectUserLoggedInUser);
+  //  console.log(user.user.role);
+  //  console.log(toke);
+  const dispatch = useDispatch()
 
   useEffect(() => {
-    const value = Cookies.get('username');
-   console.log('from useEffect', value);
+    // dispatch(logOut())
+
   },[])
 
   const onSubmit = (data) => {
-       setdata(data)
+      console.log(data);
+      dispatch(LoginUserAsyn(data))
   }
 
-  console.log(data);
   return (
     <div className="container mx-auto p-4 w-96">
     <h1 className="text-2xl font-bold mb-4">Login</h1>
