@@ -22,10 +22,12 @@ app.use(cookieparser());
 
 
 const UserRouter = require('./Route/UserRouter')
+const ProductRouter = require('./Route/ProductRouter')
+
 
 //api Routes
 app.use('/api/v1', UserRouter)
-
+app.use('/api/v1', ProductRouter)
 
 
 
