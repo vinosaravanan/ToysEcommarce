@@ -5,6 +5,7 @@ import Register from './pages/Register';
 import Login from './pages/Login';
 import ProtectedRoute from './router/ProtectedRoute';
 import Dashboard from './pages/admin/Dashboard';
+import ProductsList from './pages/Products/ProductsList';
 
 
 
@@ -26,6 +27,7 @@ function App() {
             // <Dashboard/>
            }/>
 
+           <Route path='/productList' element={<ProductsList/>}/>
 
       </Routes>
     </Layout>
