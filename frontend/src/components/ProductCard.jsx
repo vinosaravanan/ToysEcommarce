@@ -4,7 +4,9 @@ import {
   fetchAllproductsAsync,
   SelectAllproducts,
 } from "../features/products/ProductsSlice";
+
 import Pagination from "./Pagination";
+import {Link} from 'react-router-dom'
 
 const ProductCard = () => {
   const products = useSelector(SelectAllproducts);
@@ -26,21 +28,25 @@ const ProductCard = () => {
        {products.map((product) => (
 
         <div class="max-w-sm mr-5 mb-5 h-80  bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-          <a href="#">
+         
+          <Link to={`/productDetails/${product._id}`}>
             <img
               className={`rounded-t-lg h-40 w-full object-fill object-cover`}
               src={product.imagePath}
               alt=""
             />
-          </a>
+          </Link>
+         
 
           <div class="p-5">
 
-            <a href="#">
+           
+            <Link to={`/productDetails/${product._id}`}>
               <h5 class="mb-2 text-sm font-bold tracking-tight text-gray-900 dark:text-white">
                  {product.name}
               </h5>
-            </a>
+             </Link>
+            
 
             <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
                {product.description}

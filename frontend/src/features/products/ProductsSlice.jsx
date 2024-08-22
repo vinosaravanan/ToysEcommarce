@@ -1,5 +1,6 @@
 import {createSlice, createAsyncThunk} from '@reduxjs/toolkit';
 import { fetchAllproducts, 
+         fetchAllproductsByid,
          FetchCategory, 
          FetchBrand, 
          FetchRating, 
@@ -9,6 +10,7 @@ import { fetchAllproducts,
 
 const initialState = {
     products: [],
+    productDetails:[],
     brand:[],
     category:[],
     ratingRanges:[],
@@ -33,6 +35,23 @@ export const fetchAllproductsAsync = createAsyncThunk(
          
     }
 )
+
+export const fetchAllproductsByidAsync = createAsyncThunk(
+    'product/fetchAllproductsByid',
+    async (id,{rejectWithValue}) => {
+        try {
+          const response = await fetchAllproductsByid(id);
+        //    console.log(response);
+           
+          return response.product    
+
+        } catch (error) {
+            return rejectWithValue(error.response.data)
+        } 
+         
+    }
+)
+
 
 export const CategoryFilterAsync = createAsyncThunk(
      'product/CategoryFilter',
@@ -109,6 +128,11 @@ const ProductsSlice = createSlice({
     reducers:{
            setpage(state, action) {
                 state.currentpages = action.payload;
+           },
+
+           clearProductDetails(state, action) {
+              state.productDetails = []
+              state.status = 'idle'
            }
     },
 
@@ -120,6 +144,15 @@ const ProductsSlice = createSlice({
         builder.addCase(fetchAllproductsAsync.fulfilled, (state,action) => {
             state.status = 'succeeded'
             state.products = action.payload
+        })
+
+        builder.addCase(fetchAllproductsByidAsync.pending, (state, action) => {
+              state.status = 'loading'
+        })
+ 
+        builder.addCase(fetchAllproductsByidAsync.fulfilled, (state,action) => {
+            state.status = 'succeeded'
+            state.productDetails = action.payload
         })
 
         builder.addCase(CategoryFilterAsync.pending, (state, action) => {
@@ -180,8 +213,9 @@ const ProductsSlice = createSlice({
      }
 })
 
-export const {setpage} = ProductsSlice.actions 
+export const {setpage, clearProductDetails} = ProductsSlice.actions 
 
 export const SelectAllproducts = (state) => state.product.products
+export const SelectproductDetails = (state) => state.product.productDetails
 
 export default ProductsSlice.reducer

@@ -55,9 +55,6 @@ exports.PaginationProducts = asynErrorHandler( async (req, res, next) => {
 
 })
 
-
-
-
 // Get all product
 exports.getAllproducts = asynErrorHandler(async (req, res, next) => {
 
@@ -67,6 +64,21 @@ exports.getAllproducts = asynErrorHandler(async (req, res, next) => {
          success:true,
          product
        })
+})
+
+
+// Get Product Details By id
+exports.getproductsDetails = asynErrorHandler(async (req, res, next) => {
+        const product = await Product.findById(req.params.id)
+         
+         if (! product) {
+              return new ErrorHandler("product Not Found", 404)
+         }
+
+         res.status(201).json({
+              success:true,
+              product
+         })
 })
 
 
