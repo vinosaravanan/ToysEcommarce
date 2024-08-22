@@ -1,6 +1,6 @@
 const express = require('express');
 const { isAuthenticatedUser,authorizeRoles } = require('../middlewares/auth');
-const { createProduct, getAdminProduct, getAllproducts, FilteredProducts } = require('../Conroller/ProductConroller');
+const { createProduct, getAdminProduct, getAllproducts, FilteredProducts, PaginationProducts } = require('../Conroller/ProductConroller');
 
 
 
@@ -8,6 +8,7 @@ const productRouter = express.Router();
 
 productRouter.route('/products').get(getAllproducts)
 productRouter.route('/filterproducts').get(FilteredProducts)
+productRouter.route('/pagination').get(PaginationProducts)
 
 
 productRouter.route('/admin/products').get(isAuthenticatedUser, authorizeRoles('admin'), getAdminProduct)

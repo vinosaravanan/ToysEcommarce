@@ -25,15 +25,43 @@ exports.FilteredProducts = asynErrorHandler(async (req, res, next) => {
      if(maxprice) Filter.price = {...Filter.price, $lte:Number(maxprice)}
 
 
-    const products = await Product.find(Filter)
-     res.status(201).json({products})
+    const products = await Product.find(Filter).limit(9); //// add limit quary for pagenation 
+     res.status(201).json({
+       success:true,
+       products
+  })
 })
+
+/// Pagination
+
+exports.PaginationProducts = asynErrorHandler( async (req, res, next) => {
+        const page = parseInt(req.query.page) || 1
+        const limit = parseInt(req.query.limit) || 9
+        const skip = (page -1) * limit;
+        
+        console.log(page, limit, skip);
+        
+
+        const products = await Product.find().skip(skip).limit(limit)
+        const totalProducts = await Product.countDocuments();
+
+
+        res.status(201).json({
+              products,
+              totalProducts,
+              totalpages:Math.ceil(totalProducts / limit),
+              currentpage: page
+        })
+
+})
+
+
 
 
 // Get all product
 exports.getAllproducts = asynErrorHandler(async (req, res, next) => {
 
-       const product = await Product.find();
+       const product = await Product.find().limit(9); //// add limit quary for pagenation
        
        res.status(201).json({
          success:true,

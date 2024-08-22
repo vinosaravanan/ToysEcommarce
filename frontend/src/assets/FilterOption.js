@@ -14,9 +14,11 @@ const filters = [
       id: "brand",
       name: "Brand",
       options: [
-        { label: "Brand A", checked: false },
-        { label: "Brand B", checked: false },
-        { label: "Brand C", checked: false },
+        { label: "Lego", checked: false },
+        { label: "Mattel", checked: false },
+        { label: "Hasbro", checked: false },
+        { label: "MGA Entertainment", checked: false },
+        { label: "Spin Master", checked: false },
       ],
     },
     {
@@ -32,16 +34,17 @@ const filters = [
         { label: 3, checked: false },
         { label: 4, checked: false },
         { label: 5, checked: false },
+        { label: 1, checked: false },
       ],
     },
     {
       id: "price",
       name: "Price Range",
       options: [
-        { label: "$0 - $50", checked: false },
-        { label: "$50 - $100", checked: false },
-        { label: "$100 - $500", checked: false },
         { label: "$500 - $1000", checked: false },
+        { label: "$1000 - $2000", checked: false },
+        { label: "$2000 - $3000", checked: false },
+        { label: "$3000 - $5000", checked: false },
       ],
     },
   ];

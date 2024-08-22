@@ -1,15 +1,46 @@
 import React, { useState } from "react";
 import FilterOption from "../assets/FilterOption";
+import {useDispatch} from 'react-redux'
+import {CategoryFilterAsync, fetchAllproductsAsync, brandFilterAsync, RatingFilterAsync, PriceFilterAsync} from '../features/products/ProductsSlice'
 
 const Sidebar = () => {
   const [OpenFilter, setOpenFilter] = useState(null);
+
+  const dispatch = useDispatch()
+
 
   const toggleFilter = (id) => {
     setOpenFilter((prevFilter) => (prevFilter === id ? null : id));
   };
 
-  const handleFilter = (e) => {
-    console.log(e.target.checked);
+  const handleFilter = (e, filter, option) => {
+      const checked = e.target.checked
+
+      if (checked === true && filter.id === 'category') {
+           dispatch(CategoryFilterAsync(option.label))
+      }
+
+      if (checked === true && filter.id === 'brand') {
+           dispatch(brandFilterAsync(option.label))
+      }
+
+      if (checked === true && filter.id === 'rating') {
+           dispatch(RatingFilterAsync(option.label))
+      }
+
+      if (checked === true && filter.id === 'price') {
+          const [min, max] = option.label.replaceAll('$', '').split('-').map(Number)
+           console.log(min, max);
+           
+            dispatch(PriceFilterAsync([min, max]))
+      }
+
+
+      
+      if(! checked) {
+         dispatch(fetchAllproductsAsync())
+      }
+
   };
 
   return (
@@ -41,9 +72,9 @@ const Sidebar = () => {
                   type="checkbox"
                   className="w-4 h-4 ml-4 bg-gray-100 border-gray-300 rounded text-primary-600 focus:ring-primary-500 dark:focus:ring-primary-600 dark:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500"
                   defaultChecked={option.checked}
-                  onChange={(e) => handleFilter(e)}
+                  onChange={(e) => handleFilter(e, filter, option)}
                 />
-                <span className="text-gray-800">{option.label}</span>
+                <span className="text-gray-800">{option.label} <span className={`${filter.id === 'rating' ? 'block' : 'hidden'}`}>Stars & Up</span></span>
               </label>
             ))}
           </div>
