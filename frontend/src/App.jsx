@@ -7,6 +7,7 @@ import ProtectedRoute from './router/ProtectedRoute';
 import Dashboard from './pages/admin/Dashboard';
 import ProductsList from './pages/Products/ProductsList';
 import ProductDitails from './pages/Products/ProductDitails';
+import Homepage from './pages/Homepage';
 
 
 
@@ -19,6 +20,10 @@ function App() {
     <Layout>
       
       <Routes>
+        
+          <Route path='/'  element={<Homepage/>}/>
+         
+
           <Route path='/register' element={<Register/>}/>
           <Route path='/login' element={<Login/>}/>
        
