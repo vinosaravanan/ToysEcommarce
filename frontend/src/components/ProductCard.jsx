@@ -27,11 +27,11 @@ const ProductCard = () => {
 
        {products.map((product) => (
 
-        <div class="max-w-sm mr-5 mb-5 h-80  bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+        <div class="max-w-sm mr-5 mb-5 h-96  bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
          
           <Link to={`/productDetails/${product._id}`}>
             <img
-              className={`rounded-t-lg h-40 w-full object-fill object-cover`}
+              className={`rounded-t-lg h-52 w-full object-fill object-cover`}
               src={product.imagePath}
               alt=""
             />
