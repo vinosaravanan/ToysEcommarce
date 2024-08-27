@@ -28,7 +28,16 @@ const products = [
       price: 499.99,
       image: deadpool3
     },
+    {
+      id: 4,
+      name: "4K Ultra HD TV",
+      description: "55-inch 4K Ultra HD Smart TV with HDR and built-in streaming apps.",
+      price: 499.99,
+      image: deadpool4
+    },
    
   ];
 
-export default products
+export default products;
+
+
