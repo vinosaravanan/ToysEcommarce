@@ -8,7 +8,7 @@ import Electronicimg from '../assets/img/CategoryImg/Electronic.png'
 
 const ShopByinteRest = () => {
   return (
-    <div className="mt-14 mb-40 flex justify-center">
+    <div className="mt-14 mb-28 flex justify-center">
 
       <div className="bg-gradient-to-r from-blue-400 via-blue-300 to-blue-400 w-36 h-28 mr-5 rounded-lg relative">
         <img

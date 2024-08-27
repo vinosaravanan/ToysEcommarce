@@ -6,7 +6,7 @@ const BestSeller = () => {
   console.log(Bestseller);
 
   return (
-    <div className="flex justify-center mt-10">
+    <div className="flex justify-center mt-8">
          
 
       {Bestseller.map((product) => (
