@@ -3,7 +3,9 @@
 @tailwind components;
 @tailwind utilities;
 
-
+.footer {
+  @apply bg-red-300 max-[950px]:bg-sky-300
+}
 
 /* 
 :root {
