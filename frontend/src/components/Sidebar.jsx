@@ -44,13 +44,13 @@ const Sidebar = () => {
   };
 
   return (
-    <div className="w-full  px-2 py-0 mx-auto my-0 max-w-7xl bg-gray-400 sm:px-4 md:px-6 lg:px-8 h-full">
+    <div className="w-full  px-2 py-0 mx-auto my-0 max-w-7xl bg-gray-50 text-wrap sm:px-4 md:px-6 lg:px-8 h-full">
       <h3 className="mb-8 text-3xl text-center">Filters</h3>
       {FilterOption.map((filter) => (
         <div key={filter.id} className="mb-4 ">
           <button
             type="button"
-            className="flex items-center w-full px-4 py-2 text-2xl font-semibold text-left text-gray-800 bg-gray-100 rounded-md focus:outline-none"
+            className="flex items-center  underline underline-offset-8 text-wrap w-full px-4 py-2 text-2xl font-semibold text-left text-gray-800 rounded-md focus:outline-none"
             onClick={() => toggleFilter(filter.id)}
           >
             {/* <IoMdArrowDropright
@@ -74,7 +74,7 @@ const Sidebar = () => {
                   defaultChecked={option.checked}
                   onChange={(e) => handleFilter(e, filter, option)}
                 />
-                <span className="text-gray-800">{option.label} <span className={`${filter.id === 'rating' ? 'block' : 'hidden'}`}>Stars & Up</span></span>
+                <span className="text-gray-800 text-wrap">{option.label} <span className={`${filter.id === 'rating' ? 'block' : 'hidden'}`}>Stars & Up</span></span>
               </label>
             ))}
           </div>

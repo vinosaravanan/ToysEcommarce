@@ -6,12 +6,12 @@ const BestSeller = () => {
   console.log(Bestseller);
 
   return (
-    <div className="flex justify-center mt-8">
+    <div className="flex justify-center flex-col items-center mt-8 750px:grid 750px:grid-cols-2 750px:justify-items-center 1020px:flex 1020px:flex-row "> 
          
 
       {Bestseller.map((product) => (
 
-        <div class="max-w-sm mr-5 mb-5 h-96 w-52 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+        <div class="max-w-sm mr-5 mb-5 h-96 w-52  overflow-clip bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
           <Link to={``}>
             <img
               className={`rounded-t-lg h-52 w-52 object-fill object-cover`}

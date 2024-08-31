@@ -8,66 +8,66 @@ import Electronicimg from '../assets/img/CategoryImg/Electronic.png'
 
 const ShopByinteRest = () => {
   return (
-    <div className="mt-14 mb-28 flex justify-center">
+    <div className="mt-14 mb-28 flex justify-center items-center flex-col md:flex-row">
 
-      <div className="bg-gradient-to-r from-blue-400 via-blue-300 to-blue-400 w-36 h-28 mr-5 rounded-lg relative">
+      <div className="bg-gradient-to-r from-blue-400 via-blue-300 to-blue-400 w-36 h-28 mr-5  rounded-lg relative">
         <img
           src={sportimg}
           alt="Example"
-          className="absolute top-5  transform  -translate-y-1/2"
+          className="absolute top-5  transform  -translate-y-1/2 max-[1148px]:-translate-y-16"
         />
-        <p className="text-center absolute left-8 font-bold bottom-3">
+        <p className="text-center absolute shopByinterst left-8 font-bold bottom-3">
           Sports toys
         </p>
       </div>
 
       {/* 2 */}
 
-      <div className="bg-gradient-to-r from-yellow-300 via-yellow-100 to-yellow-300 w-36 h-28 mr-5 rounded-lg relative">
+      <div className="bg-gradient-to-r from-yellow-300 via-yellow-100 to-yellow-300 w-36 h-28 mr-5 mt-20 rounded-lg relative md:mt-0">
         <img
           src={actionimg}
           alt="Example"
-          className="absolute top-5 h-36  left-8  transform  -translate-y-20"
+          className="absolute top-5 h-36  left-8  transform  -translate-y-20 max-[1148px]:-translate-y-24"
         />
-        <p className="text-center absolute left-6 font-bold bottom-3">
+        <p className="text-center absolute shopByinterst left-6 font-bold bottom-3">
             Action figures
         </p>
       </div>
 
       {/* 3 */}
 
-      <div className="bg-gradient-to-r from-purple-300 via-purple-100 to-purple-300 w-36 h-28 mr-5 rounded-lg relative">
+      <div className="bg-gradient-to-r from-purple-300 via-purple-100 to-purple-300 w-36 h-28 mr-5 mt-14 rounded-lg relative md:mt-0">
         <img
           src={constructionimg}
           alt="Example"
           className="absolute top-5  transform  -translate-y-1/2"
         />
-        <p className="text-center absolute left-6 font-bold bottom-3">
+        <p className="text-center absolute shopByinterst left-6 font-bold bottom-3">
           Construction 
         </p>
       </div>
 
       {/* 4 */}
 
-      <div className="bg-gradient-to-r from-green-300 via-green-100 to-green-300 w-36 h-28 mr-5 rounded-lg relative">
+      <div className="bg-gradient-to-r from-green-300 via-green-100 to-green-300 w-36 h-28 mr-5 mt-16  rounded-lg relative md:mt-0">
         <img
           src={Educationalimg}
           alt="Example"
           className="absolute top-5  transform  -translate-y-20"
         />
-        <p className="text-center absolute left-8 font-bold bottom-3">
+        <p className="text-center absolute left-8  font-bold bottom-3 ">
         Educational 
         </p>
       </div>
 
       {/* 5 */}
-      <div className="bg-gradient-to-r from-red-300 via-red-100 to-red-300 w-36 h-28 mr-5 rounded-lg relative">
+      <div className="bg-gradient-to-r from-red-300 via-red-100 to-red-300 w-36 h-28 mr-5 mt-16 rounded-lg relative md:mt-0">
         <img
           src={Electronicimg}
           alt="Example"
           className="absolute top-5  transform  -translate-y-1/2"
         />
-        <p className="text-center absolute left-9 font-bold bottom-3">
+        <p className="text-center absolute shopByinterst left-9 font-bold bottom-3">
              Electronic 
         </p>
       </div>
