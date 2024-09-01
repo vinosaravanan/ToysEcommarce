@@ -51,8 +51,8 @@ const ProductDitails = () => {
             <img src={product.imagePath} alt="" />
           </div>
 
-          <div className="">
-            <h2 className="uppercase font-bold text-3xl">{product.name}</h2>
+          <div className="grid md:ml-7 lg:ml-0">
+            <h2 className="uppercase justify-self-center md:justify-self-start font-bold text-3xl">{product.name}</h2>
 
             <div className="mt-9">
               <p>{product.description}</p>
@@ -82,15 +82,16 @@ const ProductDitails = () => {
               >
                 +
               </button>
-
-                {/* //// add Card Button  */}
-
-               <button className="bg-violet-700 rounded text-slate-50 font-bold h-8 w-60">ADD TO CARD</button>    
+                 
+               {/* //// add Card Button  */}
+              
+               <button className="bg-violet-700  rounded text-slate-50 font-bold h-8 w-40 lg:w-60">ADD TO CARD</button>    
 
             </div>
               {/* for boy now button */}
-              <button className="mt-7 h-7 w-96 rounded bg-amber-500 text-white font-bold text-sm">BUY NOW</button>    
-                  
+              <div className="flex justify-center lg:justify-start">
+                <button className="mt-7 h-7 w-60 rounded bg-amber-500 text-white font-bold text-sm lg:w-96">BUY NOW</button>         
+              </div>
           </div>
         </div>
       ))}

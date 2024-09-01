@@ -7,6 +7,7 @@ import {
 
 import Pagination from "./Pagination";
 import {Link} from 'react-router-dom'
+import { CiHeart } from "react-icons/ci";
 
 const ProductCard = () => {
   const products = useSelector(SelectAllproducts);
@@ -27,8 +28,13 @@ const ProductCard = () => {
 
        {products.map((product) => (
 
-        <div class="max-w-60  mr-5 mb-5 h-96  overflow-clip bg-gray-50 border border-gray-200 rounded-lg shadow dark:border-gray-200">
-         
+        <div class="max-w-60  mr-5 mb-5 h-[26rem]  overflow-clip bg-gray-50 border border-gray-200 rounded-lg shadow dark:border-gray-200">
+           <div className="flex justify-end">
+            <button >
+             <CiHeart className="text-2xl"/>
+           </button>
+           </div>
+
           <Link to={`/productDetails/${product._id}`}>
             <img
               className={`rounded-t-lg h-52 w-full object-fill object-cover`}
