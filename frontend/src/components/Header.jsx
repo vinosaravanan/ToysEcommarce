@@ -3,6 +3,7 @@ import { BsCart2 } from "react-icons/bs";
 import { CgProfile } from "react-icons/cg";
 import { IoMdHeartEmpty } from "react-icons/io";
 import { HiMenu, HiX } from "react-icons/hi";
+import {Link} from 'react-router-dom'
 
 function Header() {
   const [isOpen, setIsOpen] = useState(false);
@@ -26,7 +27,7 @@ function Header() {
           </div>
 
           <div className="hidden md:flex items-center space-x-4">
-            <a href="/cart" className="text-gray-600 hover:text-gray-800">
+            <a href="/cart" className="text-gray-600 hover:text-gray-800 ml-4">
               <BsCart2 className="text-2xl mr-2" />
             </a>
             <a href="#" className="text-2xl mr-2">
@@ -35,6 +36,10 @@ function Header() {
             <a href="#" className="text-2xl">
               <IoMdHeartEmpty />
             </a>
+         
+            <Link to={'/login'}>
+            <button className="border-2 border-violet-900 text-violet-900 hover:bg-violet-900 hover:text-white rounded py-0  w-28">Login</button>
+           </Link>
           </div>
 
           <div className="md:hidden ml-3">
