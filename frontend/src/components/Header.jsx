@@ -12,11 +12,18 @@ function Header() {
     <header className="bg-white shadow-md">
       <div className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
-          <div className="text-2xl font-bold">
-            <a href="/" className="text-gray-800">
-              TOY shop
-            </a>
+       
+             <div className="flex items-center">
+            <div className="text-2xl font-bold mr-8">
+              <Link to="/" className="text-gray-800">
+                TOY shop
+              </Link>
+            </div>
+            <Link to="/productList" className="hidden md:block text-gray-600 hover:text-gray-800 mr-5 font-bold">
+              Products
+            </Link>
           </div>
+
 
           <div className="w-full md:w-1/3">
             <input
@@ -58,6 +65,10 @@ function Header() {
         <div className="md:hidden">
           <div className="flex justify-end">
             <div className="flex flex-col w-28 px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <Link to={'/productList'} className="mr-3 py-1 font-bold">
+                   Products
+                </Link>
+
               <a href="/cart" className="mr-3">
                 Profile
               </a>
