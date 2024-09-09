@@ -6,7 +6,7 @@ const ProductsList = () => {
   return (
     <>
       <div className="grid grid-cols-1 py-4 pr-5 md:grid-cols-3 lg:grid-cols-4">
-        <div className="col-span-1 hidden p-4 rounded justify-items-start md:block md:col-span-1 lg:block lg:col-span-1">
+        <div className="col-span-1 p-4 overflow-auto rounded justify-items-start  md:col-span-1  lg:col-span-1">
            <Sidebar/>
         </div>
 
