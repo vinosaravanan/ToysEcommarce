@@ -8,6 +8,7 @@ import {
 import Pagination from "./Pagination";
 import {Link} from 'react-router-dom'
 import { CiHeart } from "react-icons/ci";
+import AddtoCard from "./AddtoCard";
 
 const ProductCard = () => {
   const products = useSelector(SelectAllproducts);
@@ -86,7 +87,8 @@ const ProductCard = () => {
 
 
           <div className="relative ">
-            <button className="border-2 border-violet-900 text-violet-900 hover:bg-violet-900 hover:text-white rounded absolute left-3 py-1 font-bold h-8 w-48">ADD TO CARD</button>
+            {/* <button className="border-2 border-violet-900 text-violet-900 hover:bg-violet-900 hover:text-white rounded absolute left-3 py-1 font-bold h-8 w-48">ADD TO CARD</button> */}
+            <AddtoCard productId={product._id}/>
           </div>
            
 
