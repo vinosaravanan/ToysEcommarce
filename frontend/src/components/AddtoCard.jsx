@@ -1,12 +1,16 @@
-import React from 'react'
-import {useDispatch, useSelector} from 'react-redux'
+import React from 'react';
+import {useDispatch, useSelector} from 'react-redux';
+import {AddToCard} from '../features/card/CardSlice'
 
 const AddtoCard = ({productId}) => {
    const dispatch = useDispatch();
+    const card = useSelector((state) => state.Card.CardItems)
+     console.log('from cardComp...', card);
+     
+   const handleAddtoCard = async () => {
+      console.log('button is working', productId);
+       dispatch(AddToCard({productId, quantity: 1}))
 
-   const handleAddtoCard = () => {
-      console.log('button is working');
-      
    }
 
   return (
@@ -15,3 +19,12 @@ const AddtoCard = ({productId}) => {
 }
 
 export default AddtoCard
+
+
+
+
+
+
+
+
+

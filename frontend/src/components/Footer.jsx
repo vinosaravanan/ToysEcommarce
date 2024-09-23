@@ -1,4 +1,10 @@
 import React from 'react'
+import {Link} from 'react-router-dom'
+import { CiLinkedin } from "react-icons/ci";
+import { FaSquareXTwitter } from "react-icons/fa6";
+import { FaGithubSquare } from "react-icons/fa";
+import { FaFacebookSquare } from "react-icons/fa";
+import { FaLinkedin } from "react-icons/fa6";
 
 const Footer = () => {
   return (
@@ -28,6 +34,28 @@ const Footer = () => {
                  <p>public API</p>
                  <p>Documentation</p>
                  <p>Guides</p>
+              </div>
+
+              <div className='mt-6 col-span-2 md:ml-9 md:col-auto'>
+              <h1 className='mb-1 font-bold'>FOLLOW US</h1>
+                <div className='flex flex-row '>
+                  <a href="https://www.linkedin.com/in/vinothSaravanan/" target='_blank' className='text-2xl '>
+                  <FaLinkedin/>
+                  </a>
+
+                  <a href="https://x.com/home" target='_blank' className='text-2xl' >
+                 <FaSquareXTwitter/>
+                  </a>
+
+                  <a href="https://github.com/vinosaravanan" target='_blank' className='text-2xl' >
+                  <FaGithubSquare />
+                  </a>
+
+                  <a href="" className='text-2xl' >
+                  <FaFacebookSquare />
+                  </a>
+
+                </div>
               </div>
 
             </div>

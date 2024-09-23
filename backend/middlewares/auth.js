@@ -7,7 +7,17 @@ const {ObjectId} = mongoose.Types
 
 
 exports.isAuthenticatedUser = asynErrorHandler(async (req, res, next) => {
-    const {token} = req.cookies;
+
+    const authHeader = req.headers.authorization;
+
+    if (!authHeader || !authHeader.startsWith('Bearer ')) {
+      return next(new ErrorHandler('No token provided, please log in', 401));
+    }
+  
+    const token = authHeader.split(' ')[1];
+     console.log('from Auth backend', token);
+     
+    // const {token} = req.cookies;
     
     if (!token) {
         return next( new ErrorHandler("Please Login to access", 401))

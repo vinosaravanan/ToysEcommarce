@@ -8,6 +8,7 @@ import Dashboard from './pages/admin/Dashboard';
 import ProductsList from './pages/Products/ProductsList';
 import ProductDitails from './pages/Products/ProductDitails';
 import Homepage from './pages/Homepage';
+import Card from './pages/Card';
 
 
 
@@ -38,7 +39,10 @@ function App() {
            <Route path='/productList' element={<ProductsList/>}/>
              
            <Route path='/productDetails/:id' element={<ProductDitails/>}/>  
+
+           <Route path='/card' element={<Card/>}/>  
        
+
       </Routes>
     </Layout>
    

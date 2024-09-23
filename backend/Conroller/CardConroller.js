@@ -2,7 +2,8 @@ const Product = require('../Model/productModel');
 const Cart = require('../Model/Cart')
 
 exports.AddCard = async (req, res, next) => {
-
+           console.log(req.body);
+           
     const { productId, quantity } = req.body;
 
     try {
@@ -36,7 +37,8 @@ exports.AddCard = async (req, res, next) => {
         await cart.save();
       
         cart = await Cart.findById(cart._id).populate('items.product');
-
+        console.log('from cardConroll',cart);
+        
         res.status(200).json(cart);
     } catch (error) {
          console.error(error)

@@ -9,8 +9,9 @@ const ProtectedRoute = ({ children }) => {
 //   const userInfo = useSelector(selectUserInfo);
 
   const user = useSelector(selectUserLoggedInUser);
-
-//   console.log(userInfo);
+ 
+   console.log(user.
+    token);
 
   if (!user) {
     return <Navigate to="/login" replace={true}></Navigate>;

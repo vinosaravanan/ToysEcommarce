@@ -12,10 +12,17 @@ const app = express();
 DBconnection()
 
 // middlewares
-app.use(core({
-    rigin: 'http://localhost:8080',
-    credentials: true
-}))
+ app.use(core(
+    {
+     rigin: 'http://localhost:8080',  // or your frontend domain
+     credentials: true,
+   }
+ ))
+
+// app.use(cors({
+//     origin: 'http://localhost:5173',  // or your frontend domain
+//     credentials: true,
+//   }));
 
 app.use(express.json());
 app.use(cookieparser());

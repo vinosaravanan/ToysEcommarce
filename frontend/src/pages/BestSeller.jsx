@@ -11,8 +11,8 @@ const BestSeller = () => {
 
       {Bestseller.map((product) => (
 
-        <div class="max-w-sm mr-5 mb-5 h-96 w-52  overflow-clip bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-          <Link to={``}>
+        <div class="max-w-sm mr-5 mb-5 h-96 w-52  overflow-clip bg-white border border-gray-200 rounded-lg shadow  dark:border-gray-200">
+          <Link to={`/productList`}>
             <img
               className={`rounded-t-lg h-52 w-52 object-fill object-cover`}
               src={product.image}
@@ -20,16 +20,27 @@ const BestSeller = () => {
             />
           </Link>
 
-          <div class="p-5">
-            <Link to={``}>
-              <h5 class="mb-2 text-sm font-bold tracking-tight text-gray-900 dark:text-white">
+          <div class="p-3">
+            <Link to={`/productList`}>
+              <h5 class="mb-1 text-sm font-bold tracking-tight text-violet-900">
                 {product.name}
               </h5>
             </Link>
 
-            <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
+            <p class="mb-3 font-normal text-gray-900 dark:text-gray-700 lowercase">
               {product.description}
             </p>
+
+            <h2 className="font-bold mb-2">
+                  ₹{product.price} 
+              <span className="text-[15px] ml-1  dark:text-gray-500 line-through">
+                 ₹{product.price}
+              </span>
+                <span className="text-[17px] ml-1  dark:text-green-500">
+                  {product.discount}% off
+                </span>
+
+                </h2>
           </div>
         </div>
 
