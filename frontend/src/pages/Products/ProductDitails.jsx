@@ -6,6 +6,7 @@ import {
   fetchAllproductsByidAsync,
   clearProductDetails,
 } from "../../features/products/ProductsSlice";
+import {AddToCard} from '../../features/card/CardSlice'
 
 const ProductDitails = () => {
   const { id } = useParams();
@@ -28,6 +29,13 @@ const ProductDitails = () => {
           setQuantity((quantity) => quantity + 1)
          }
    }
+
+   const handleAddtoCard = async () => {
+ 
+     dispatch(AddToCard({id, quantity: 1}))
+
+ }
+
 
   useEffect(() => {
     console.log("FROM USEEFFECT", id);
@@ -85,7 +93,7 @@ const ProductDitails = () => {
                  
                {/* //// add Card Button  */}
               
-               <button className="bg-violet-700  rounded text-slate-50 font-bold h-8 w-40 lg:w-60">ADD TO CARD</button>    
+               <button onClick={handleAddtoCard} className="bg-violet-700  rounded text-slate-50 font-bold h-8 w-40 lg:w-60">ADD TO CARD</button>    
 
             </div>
               {/* for boy now button */}

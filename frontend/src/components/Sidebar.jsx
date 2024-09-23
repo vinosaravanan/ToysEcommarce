@@ -8,6 +8,7 @@ import {
   RatingFilterAsync,
   PriceFilterAsync,
 } from "../features/products/ProductsSlice";
+import { FaChevronDown } from "react-icons/fa"; // Import the dropdown icon
 
 const Sidebar = () => {
   const [OpenFilter, setOpenFilter] = useState(null);
@@ -61,20 +62,25 @@ const Sidebar = () => {
 
       {/* Sidebar container */}
       <div
-        className={`fixed inset-y-0 left-0 z-10 w-64 bg-gray-50 transform transition-transform duration-300 ease-in-out md:relative md:translate-x-0 md:z-0 ${
+        className={`fixed inset-y-0 left-0 z-10 w-64 transform transition-transform duration-300 ease-in-out md:relative md:translate-x-0 md:z-0 ${
           isOpen ? "translate-x-0" : "-translate-x-full"
         }`}
       >
-        <div className="w-full px-2 py-0 mx-auto my-0 max-w-7xl text-wrap sm:px-4 md:px-6 lg:px-8 h-full overflow-y-auto">
+        <div className="w-full px-2 py-0 mx-auto my-0 max-w-7xl text-wrap bg-gray-50 md:bg-transparent sm:px-4 md:px-6 lg:px-8 h-full overflow-y-auto">
           <h3 className="mb-8 text-3xl text-center">Filters</h3>
           {FilterOption.map((filter) => (
-            <div key={filter.id} className="mb-4">
+            <div key={filter.id} className="mb-4 border border-gray-300 rounded-md"> {/* Add border and rounded corners */}
               <button
                 type="button"
-                className="flex items-center underline underline-offset-8 text-wrap w-full px-4 py-2 text-2xl font-semibold text-left text-gray-800 rounded-md focus:outline-none"
+                className="flex items-center justify-between w-full px-4 py-2 text-2xl font-semibold text-left text-gray-800 rounded-md focus:outline-none"
                 onClick={() => toggleFilter(filter.id)}
               >
                 {filter.name}
+                <FaChevronDown
+                  className={`ml-2 transition-transform duration-300 ${
+                    OpenFilter === filter.id ? "transform rotate-80" : "-rotate-90"
+                  }`}
+                />
               </button>
               <div
                 className={`mt-2 form-control flex flex-col flex-wrap ${
@@ -122,3 +128,6 @@ const Sidebar = () => {
 };
 
 export default Sidebar;
+
+
+
