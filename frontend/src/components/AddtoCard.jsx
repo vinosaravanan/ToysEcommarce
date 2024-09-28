@@ -14,7 +14,13 @@ const AddtoCard = ({productId}) => {
    }
 
   return (
-    <button onClick={handleAddtoCard} className="border-2 border-violet-900 text-violet-900 hover:bg-violet-900 hover:text-white rounded absolute left-3 py-1 font-bold h-8 w-48">ADD TO CARD</button>
+    <button 
+    onClick={handleAddtoCard} 
+    className="border-2 border-violet-900 text-violet-900 hover:bg-violet-900 hover:text-white rounded py-1 font-bold h-8 
+               w-full max-w-xs md:max-w-md lg:max-w-lg
+               md:ml-4 lg:ml-6 self-stretch ">
+    ADD TO CART
+  </button>
   )
 }
 

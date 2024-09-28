@@ -15,32 +15,33 @@ const Pagination = () => {
   return (
     <div className='flex justify-center items-center'>
        <button
-         className='mr-2 flex items-center justify-center px-4 h-10 ms-0 leading-tight text-gray-500 bg-white border border-e-0 border-gray-300 rounded-s-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white'
+         className='mr-2 px-2 h-8 md:mr-3 text-2xl flex items-center justify-center md:px-3 md:h-10 leading-tight text-gray-500 bg-white border border-gray-300 rounded-e-lg hover:bg-gray-100 hover:text-gray-700 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-violet-500 dark:hover:text-white'
          onClick={() => handlepageChange(currentpage - 1)}
          disabled={currentpage === 1}
        >
-         Previous
+          &lt;
        </button>
       {
         [...Array(totalpages)].map((_, index) => (
+          
               <button
-                 className={` mr-1 flex items-center justify-center px-4 h-10 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white active:bg-gray-100 active:text-white`}
-                 key={index + 1}
-                 onClick={()=> handlepageChange(index + 1)}
-                  // className={currentpage === index + 1 ? 'active' : '' }
-              >
-
-                {index + 1}
-              </button>
+              className={`md:mr-1 px-2 h-8 flex items-center justify-center md:px-4 md:h-10 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-violet-500 dark:hover:text-white ${
+                currentpage === index + 1 ? 'bg-violet-500 text-white' : ''
+              }`}
+              key={index + 1}
+              onClick={() => handlepageChange(index + 1)}
+            >
+              {index + 1}
+            </button>
 
         ))
       }
        <button
-         className='ml-2 flex items-center justify-center px-4 h-10 leading-tight text-gray-500 bg-white border border-gray-300 rounded-e-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white'
+         className='ml-1 px-2 h-8 md:ml-2 text-2xl flex items-center justify-center md:px-3 md:h-10 leading-tight text-gray-500 bg-white border border-gray-300 rounded-e-lg hover:bg-gray-100 hover:text-gray-700 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-violet-500 dark:hover:text-white'
          onClick={() => handlepageChange(currentpage + 1)}
          disabled={currentpage === totalpages}
        >
-        next
+         &gt;
        </button>
 
 

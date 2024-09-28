@@ -18,7 +18,7 @@ const Card = () => {
 
   return (
     <>
-      <div className="col-span-1 p-4 rounded md:col-span-2  lg:col-span-3">
+      <div className="col-span-1 p-4 rounded md:col-span-2  lg:col-span-3 mt-20 md:mt-20">
         <div className="grid grid-cols-1 justify-items-center md:justify-items-stretch  md:grid-cols-2 lg:grid-cols-5 ">
           {cardItems.map((card, i) => (
             // card?.product?.imagePath

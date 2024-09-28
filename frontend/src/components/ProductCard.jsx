@@ -25,11 +25,11 @@ const ProductCard = () => {
   return (
     <>
     
-       <div className="grid grid-cols-1 justify-items-center md:justify-items-stretch  md:grid-cols-2 lg:grid-cols-3 ">
+       <div className="grid grid-cols-1 justify-items-center md:justify-items-stretch  md:grid-cols-2 lg:grid-cols-3 md:mt-20 lg:mt-20">
 
        {products.map((product) => (
 
-        <div class="max-w-60  mr-5 mb-5 h-[26rem]  overflow-clip bg-gray-50 border border-gray-200 rounded-lg shadow dark:border-gray-200">
+        <div class="max-w-60  mr-5 mb-5 h-[26rem] md:h-[28rem] overflow-clip bg-gray-50 border border-gray-200 rounded-lg shadow dark:border-gray-200">
            <div className="flex justify-end">
             <button >
              <CiHeart className="text-2xl"/>
@@ -86,7 +86,8 @@ const ProductCard = () => {
             <h2 className="font-bold mb-2">₹{product.price}</h2>
 
 
-          <div className="relative ">
+        
+          <div className="flex justify-start items-center relative">
             {/* <button className="border-2 border-violet-900 text-violet-900 hover:bg-violet-900 hover:text-white rounded absolute left-3 py-1 font-bold h-8 w-48">ADD TO CARD</button> */}
             <AddtoCard productId={product._id}/>
           </div>

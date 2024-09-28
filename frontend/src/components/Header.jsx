@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { BsCart2 } from "react-icons/bs";
 import { CgProfile } from "react-icons/cg";
 import { IoMdHeartEmpty } from "react-icons/io";
@@ -12,8 +12,37 @@ function Header() {
   const totalcardItems = useSelector(selectTotallCardItems)
   console.log(totalcardItems);
   
+  const [showNavbar, setShowNavbar] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
+
+  // Handle scrolling behavior
+  const handleScroll = () => {
+    if (window.scrollY > lastScrollY) {
+      // Scrolling down
+      setShowNavbar(false);
+    } else {
+      // Scrolling up
+      setShowNavbar(true);
+    }
+    setLastScrollY(window.scrollY);
+  };
+
+  useEffect(() => {
+    // Add scroll event listener
+    window.addEventListener('scroll', handleScroll);
+
+    // Clean up event listener on component unmount
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, [lastScrollY]);
+
+
   return (
-    <header className="bg-white shadow-md">
+    <header className={`fixed top-0 left-0 right-0 z-50 bg-white transition-transform duration-500 ease-in-out ${
+      showNavbar ? 'translate-y-0' : '-translate-y-full'
+    }`}>
+
       <div className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
        
@@ -71,28 +100,31 @@ function Header() {
       </div>
 
       {isOpen && (
-        <div className="md:hidden">
+        <div  className={`md:hidden transition-transform duration-300 ease-in-out transform ${
+          isOpen ? "translate-y-0 opacity-100" : "translate-y-[-100%] opacity-0"
+        }`}>
           <div className="flex justify-end">
             <div className="flex flex-col w-28 px-2 pt-2 pb-3 space-y-1 sm:px-3">
-                <Link to={'/productList'} className="mr-3 py-1 font-bold">
+                <Link to={'/productList'} className="mr-3 py-1 font-bold" onClick={()=> setIsOpen(false)}>
                    Products
                 </Link>
 
-              <a href="/cart" className="mr-3">
+              <Link className="mr-3" onClick={()=> setIsOpen(false)}>
                 Profile
-              </a>
-
-              <a href="#" className="mr-3 py-1">
+              </Link>
+             
+             <Link to={'/card'} className="mr-3 py-1" onClick={()=> setIsOpen(false)} >
                 Card
-              </a>
+              </Link>
 
-              <a href="#" className="mr-3 py-1">
+              <Link to={'/dashboard'} className="mr-3 py-1 " onClick={()=> setIsOpen(false)}>
                 dasboard
-              </a>
+              </Link>
 
-              <a href="#" className="mr-3 py-1">
+              <Link to={'/login'} className="mr-3 py-1" onClick={()=> setIsOpen(false)}>
                 Login
-              </a>
+              </Link>
+
             </div>
           </div>
         </div>
@@ -102,3 +134,5 @@ function Header() {
 }
 
 export default Header;
+
+

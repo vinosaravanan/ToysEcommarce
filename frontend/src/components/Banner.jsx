@@ -37,7 +37,7 @@ const Banner = () => {
   };
                                
   return (
-    <div className="relative w-full h-80  overflow-hidden">
+    <div className="relative w-full h-80  overflow-hidden mt-10 md:mt-14 lg:mt-14">
       {images.map((image, index) => (
         <div
           key={index}
@@ -56,7 +56,7 @@ const Banner = () => {
       {/* Previous Button */}
       <button
         onClick={PrevImage}
-        className="absolute top-1/2 left-4 transform -translate-y-1/2 bg-gray-800 text-white p-2 rounded-full"
+        className="absolute top-1/2 left-4 transform -translate-y-1/2  text-2xl text-white p-2 rounded-full"
       >
         &lt;
       </button>
@@ -64,7 +64,7 @@ const Banner = () => {
       {/* Next Button */}
       <button
         onClick={nextImage}
-        className="absolute top-1/2 right-4 transform -translate-y-1/2 bg-gray-800 text-white p-2 rounded-full"
+        className="absolute top-1/2 right-4 transform -translate-y-1/2 text-2xl text-white p-2 rounded-full"
       >
         &gt;
       </button>

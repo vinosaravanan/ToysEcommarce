@@ -14,22 +14,42 @@ const initialState = {
 
 export const AddToCard = createAsyncThunk(
     'card/AddToCard',
-    async ({productId, quantity}, {rejectWithValue, getState}) => {
-         try {
-             const user = getState().Auth.LoggedInUserToken
-
-           const response = await axios.post('http://localhost:8080/api/v1/card', {productId, quantity},
+    async ({ productId, quantity }, { rejectWithValue, getState }) => {
+        try {
+          const user = getState().Auth?.LoggedInUserToken;
+    
+          // Log token and request body
+          console.log('User token:', user?.token);
+       
+          const response = await axios.post(
+            'http://localhost:8080/api/v1/card',
+            { productId, quantity },
             {
-             headers: {
-              Authorization: `Bearer ${user.token}`,
-               },
-             })  
-            console.log('from cardSlice',response.data);
-           return{ ...response.data, productId}
-         } catch (error) {
-            rejectWithValue(error)
-         }
-    }
+              headers: {
+                Authorization: `Bearer ${user?.token}`,
+              },
+            }
+          );
+    
+          // Log response for debugging
+          console.log('Response from AddToCard:', response.data);
+    
+          return { ...response.data, productId };
+        } catch (error) {
+          // Log error details to diagnose the issue
+          console.error('Error in AddToCard thunk:', error);
+          return rejectWithValue(
+            error.response?.data || error.message || 'Unknown error occurred'
+          );
+        }
+      }
+
+
+
+
+
+
+
 )
 
 
@@ -52,14 +72,14 @@ const CardSlice = createSlice({
 
           builder.addCase(AddToCard.pending, (state) => {
              state.status = 'loading'
-              console.log(state);
+              console.log('PENDING');
               
           }) 
 
           builder.addCase(AddToCard.fulfilled, (state, action) => {
                 //   console.log('from bulter', action.payload.items.find(item => item.product._id === action.payload.productId));
                 //   console.log('test from builter', action.payload.productId);
-                  
+                console.error('AddToCard rejected:', action.payload);
                 console.log(action.payload);
                 
                 ////// new code 1
