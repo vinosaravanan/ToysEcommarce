@@ -12,6 +12,14 @@ export const fetchAllproductsByid = async (id) => {
 }
 
 
+export const SearchProducts = async (searchTerm) => {
+    const response = await axios.get(`http://localhost:8080/api/v1/searchproducts`,{
+            params:{search:searchTerm}
+    });
+    return response.data
+}
+
+
 export const  FetchCategory = async (filtervalue) => {
         
     const response = await axios.get(`http://localhost:8080/api/v1/filterproducts?category=${filtervalue}`)

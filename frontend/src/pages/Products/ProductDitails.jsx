@@ -53,7 +53,7 @@ const ProductDitails = () => {
       {[...Array(productDetails)].map((product) => (
         <div
           key={product._id}
-          className="grid mt-9 grid-cols-1 md:grid-cols-2 md:h-96 lg:grid-cols-2 lg:h-96"
+          className="grid mt-24 mb-8 grid-cols-1 md:grid-cols-2 md:h-96 lg:grid-cols-2 lg:h-96"
         >
           <div className="flex justify-center">
             <img src={product.imagePath} alt="" />

@@ -29,7 +29,7 @@ function Login() {
   };
 
   return (
-    <div className="flex items-center justify-center min-h-96 mt-20">
+    <div className="flex items-center justify-center min-h-96 mt-20 mb-8">
       <div className="w-full max-w-sm p-8  space-y-8 bg-white rounded-lg shadow-md top-10">
         <h2 className="text-2xl font-bold text-center">Login</h2>
         <form className="mt-8 space-y-6" onSubmit={handleSubmit(onSubmit)}>

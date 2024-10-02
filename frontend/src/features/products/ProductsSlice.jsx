@@ -5,11 +5,13 @@ import { fetchAllproducts,
          FetchBrand, 
          FetchRating, 
          FetchPrice, 
-         paginationFetch} from './ProductsApi';
+         paginationFetch,
+         SearchProducts} from './ProductsApi';
 
 
 const initialState = {
     products: [],
+    searchProducts:[],
     productDetails:[],
     brand:[],
     category:[],
@@ -50,6 +52,22 @@ export const fetchAllproductsByidAsync = createAsyncThunk(
         } 
          
     }
+)
+
+/// search Products
+export const SearchProductAsync = createAsyncThunk(
+    'product/SearchProduct',
+    async(searchTerm, {rejectWithValue}) => {
+      try {
+
+        const response = await SearchProducts(searchTerm)
+        return response.products
+
+      } catch (error) {
+        rejectWithValue(error)
+      }
+    }
+
 )
 
 
@@ -154,6 +172,19 @@ const ProductsSlice = createSlice({
             state.status = 'succeeded'
             state.productDetails = action.payload
         })
+        
+        //// search products
+         builder.addCase(SearchProductAsync.pending, (state, action) => {
+             state.status = 'loading'
+
+         })
+
+         builder.addCase(SearchProductAsync.fulfilled, (state, action) => {
+            state.status = 'succeeded'
+            state.searchProducts = action.payload
+
+         })
+
 
         builder.addCase(CategoryFilterAsync.pending, (state, action) => {
             state.status = 'loading'

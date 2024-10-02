@@ -29,7 +29,7 @@ const ProductCard = () => {
 
        {products.map((product) => (
 
-        <div class="max-w-60  mr-5 mb-5 h-[26rem] md:h-[28rem] overflow-clip bg-gray-50 border border-gray-200 rounded-lg shadow dark:border-gray-200">
+        <div class="max-w-60  mr-5 mb-5 h-auto md:h-auto overflow-clip bg-gray-50 border border-gray-200 rounded-lg shadow dark:border-gray-200">
            <div className="flex justify-end">
             <button >
              <CiHeart className="text-2xl"/>
@@ -101,7 +101,7 @@ const ProductCard = () => {
       ))}
        
     </div>
-      <hr className=" h-0.5 bg-gray-300 mb-3"/>
+      {/* <hr className=" h-0.5 bg-gray-300 mb-3"/> */}
                 <Pagination/>
    
     </>

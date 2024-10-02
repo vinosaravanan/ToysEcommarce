@@ -13,7 +13,7 @@ const Pagination = () => {
     }
 
   return (
-    <div className='flex justify-center items-center'>
+    <div className='flex justify-center items-center mt-8'>
        <button
          className='mr-2 px-2 h-8 md:mr-3 text-2xl flex items-center justify-center md:px-3 md:h-10 leading-tight text-gray-500 bg-white border border-gray-300 rounded-e-lg hover:bg-gray-100 hover:text-gray-700 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-violet-500 dark:hover:text-white'
          onClick={() => handlepageChange(currentpage - 1)}

@@ -54,7 +54,7 @@ const Sidebar = () => {
     <>
       {/* Mobile toggle button */}
       <button
-        className="z-20 p-2 bg-gray-800 text-white rounded-r-md top-28 left-0 md:hidden"
+        className="z-20 p-2 bg-gray-800 text-white rounded-r-md mt-20 top-28 left-0 md:hidden"
         onClick={() => setIsOpen(!isOpen)}
       >
         {isOpen ? "Close" : "Filters"}
@@ -62,14 +62,14 @@ const Sidebar = () => {
 
       {/* Sidebar container */}
       <div
-        className={`fixed inset-y-0 left-0 z-10 w-64 transform transition-transform duration-300 ease-in-out md:relative md:translate-x-0 md:z-0 ${
+        className={`fixed inset-y-0 left-0  z-10 w-64 transform transition-transform duration-300 ease-in-out md:relative md:translate-x-0 md:z-0 ${
           isOpen ? "translate-x-0" : "-translate-x-full"
         }`}
       >
-        <div className="w-full px-2 py-0 mx-auto my-0 max-w-7xl text-wrap bg-gray-50 md:bg-transparent sm:px-4 md:px-6 lg:px-8 h-full overflow-y-auto">
-          <h3 className="mb-8 text-3xl text-center">Filters</h3>
+        <div className="w-full px-2 py-0 mx-auto my-0 max-w-7xl md:mt-20 text-wrap bg-gray-50 md:bg-transparent sm:px-4 md:px-6 lg:px-8 h-full overflow-y-auto">
+          <h3 className="mb-12 text-3xl text-center md:hidden">Filters</h3>
           {FilterOption.map((filter) => (
-            <div key={filter.id} className="mb-4 border border-gray-300 rounded-md"> {/* Add border and rounded corners */}
+            <div key={filter.id} className="mb-4 border  border-gray-300 rounded-md"> {/* Add border and rounded corners */}
               <button
                 type="button"
                 className="flex items-center justify-between w-full px-4 py-2 text-2xl font-semibold text-left text-gray-800 rounded-md focus:outline-none"

@@ -3,6 +3,26 @@ const asynErrorHandler = require('../middlewares/asynErrorHandler');
 const ErrorHandler = require('../utils/errorHandler');
 
 
+//Search Products 
+exports.SearchProducts = async(req, res, next) => {
+
+     const { search } = req.query;
+     try {
+         const products = await Product.find({
+             $or: [
+                 { name: { $regex: search, $options: 'i' } },
+                 { category: { $regex: search, $options: 'i' } },
+                 { brand: { $regex: search, $options: 'i' } },
+                 { description: { $regex: search, $options: 'i' } }
+             ]
+         }).limit(6);
+         
+         res.json({ products });
+     } catch (error) {
+         res.status(500).json({ message: 'Server error' });
+     }
+
+}
 
 // Filtered products 
 exports.FilteredProducts = asynErrorHandler(async (req, res, next) => {
@@ -33,7 +53,6 @@ exports.FilteredProducts = asynErrorHandler(async (req, res, next) => {
 })
 
 /// Pagination
-
 exports.PaginationProducts = asynErrorHandler( async (req, res, next) => {
         const page = parseInt(req.query.page) || 1
         const limit = parseInt(req.query.limit) || 9
@@ -92,7 +111,6 @@ exports.getAdminProduct = asynErrorHandler(async (req, res, next) => {
        })
 
 })
-
 
 //Create Products -- -Admin 
 exports.createProduct = asynErrorHandler(async (req, res, next) => {
