@@ -5,7 +5,7 @@ import {AddToCard} from '../features/card/CardSlice'
 const AddtoCard = ({productId}) => {
    const dispatch = useDispatch();
     const card = useSelector((state) => state.Card.CardItems)
-     console.log('from cardComp...', card);
+    //  console.log('from cardComp...', card);
      
    const handleAddtoCard = async () => {
       console.log('button is working', productId);

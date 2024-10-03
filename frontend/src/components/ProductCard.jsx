@@ -20,7 +20,7 @@ const ProductCard = () => {
   }, []);
 
 
-  console.log("from product card", products);
+  // console.log("from product card", products);
 
   return (
     <>
@@ -29,7 +29,7 @@ const ProductCard = () => {
 
        {products.map((product) => (
 
-        <div class="max-w-60  mr-5 mb-5 h-auto md:h-auto overflow-clip bg-gray-50 border border-gray-200 rounded-lg shadow dark:border-gray-200">
+        <div key={product._id} class="max-w-60  mr-5 mb-5 h-auto md:h-auto overflow-clip bg-gray-50 border border-gray-200 rounded-lg shadow dark:border-gray-200">
            <div className="flex justify-end">
             <button >
              <CiHeart className="text-2xl"/>

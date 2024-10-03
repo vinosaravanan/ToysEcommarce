@@ -12,7 +12,7 @@ import Search from "./Search";
 function Header() {
   const [isOpen, setIsOpen] = useState(false);
   const totalcardItems = useSelector(selectTotallCardItems)
-  console.log(totalcardItems);
+  // console.log(totalcardItems);
   
   const [showNavbar, setShowNavbar] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
@@ -52,17 +52,17 @@ function Header() {
              <div className="flex">
              
              <span>
-             <Link to="/" >
+             <Link to="/" className="hidden">
               toys
               </Link>
               </span>
               <div>
               <Link to="/" className="text-gray-800">
-              <img src={logo} alt="gif"  width='50px' className="bg-violet-50"/> 
+              <img src={logo} alt="gif"  width='100px' className="bg-violet-50 hidden md:block"/> 
               </Link>
               </div>
               <span>
-              <Link to="/" >
+              <Link to="/" className="hidden">
                shop
               </Link>
               </span>
