@@ -9,6 +9,9 @@ export default {
         '750px': '750px',   
         '1020px': '1020px', 
       },
+      fontFamily:{
+         custom:["Bowlby One", 'sans-serif']
+      }
 
     },
   },

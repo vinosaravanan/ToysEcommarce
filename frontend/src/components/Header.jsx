@@ -6,7 +6,7 @@ import { HiMenu, HiX } from "react-icons/hi";
 import {Link} from 'react-router-dom'
 import {useSelector} from 'react-redux'
 import {selectTotallCardItems} from '../features/card/CardSlice';
-import logo from '../assets/img/Logo/ball.gif'
+import { FaBaseballBall } from "react-icons/fa";
 import Search from "./Search";
 
 function Header() {
@@ -41,56 +41,29 @@ function Header() {
 
 
   return (
-    <header className={`fixed top-0 left-0 right-0 z-50 bg-white transition-transform duration-500 ease-in-out ${
+    <header className={`fixed top-0 left-0 right-0 z-50  bg-white transition-transform duration-500 ease-in-out ${
       showNavbar ? 'translate-y-0' : '-translate-y-full'
     }`}>
 
 
       <div className="container mx-auto px-4 py-4">
+    
+
         <div className="flex items-center justify-between">
            
-             <div className="flex">
-             
-             <span>
-             <Link to="/" className="hidden">
-              toys
-              </Link>
-              </span>
-              <div>
-              <Link to="/" className="text-gray-800">
-              <img src={logo} alt="gif"  width='100px' className="bg-violet-50 hidden md:block"/> 
-              </Link>
-              </div>
-              <span>
-              <Link to="/" className="hidden">
-               shop
-              </Link>
-              </span>
-            
+            <div className="text-2xl mr-4 font-custom">
+              <Link to='/'>
+               T<span className='text-violet-600'>O</span>Y<span className="text-violet-600">S</span>
+               </Link>
               </div>
 
 
-             <div className="flex items-center">
-                <div className=" mr-8">
-
-              {/* <Link to="/" className="text-gray-800">
-                <img src={logo} alt="gif"  width='50px' className="bg-violet-50"/> 
-              </Link> */}
-
-            </div>
+             <div className="flex items-center justify-center">
+           
             <Link to="/productList" className="hidden md:block text-gray-600 hover:text-gray-800 mr-5 font-bold">
               Products
             </Link>
           </div>
-
-{/* 
-          <div className="w-full md:w-1/3">
-            <input
-              type="text"
-              placeholder="Search..."
-              className="px-4 py-2 w-full border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500"
-            />
-          </div> */}
           
            <Search/>
 
@@ -163,5 +136,7 @@ function Header() {
 }
 
 export default Header;
+
+
 
 

@@ -58,6 +58,7 @@ const AuthSlice = createSlice({
         
         builder.addCase(registerUserAsyn.fulfilled, (state, action) => {
              state.status = 'succeeded'
+             state.LoggedInUserToken = action.payload
              state.userInfo = action.payload
              state.error = null
         })
