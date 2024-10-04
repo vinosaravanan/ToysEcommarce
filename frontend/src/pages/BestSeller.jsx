@@ -11,7 +11,7 @@ const BestSeller = () => {
 
       {Bestseller.map((product) => (
 
-        <div class="max-w-sm mr-5 mb-5 h-96 w-52  overflow-clip bg-white border border-gray-200 rounded-lg shadow  dark:border-gray-200">
+        <div class="max-w-sm mr-5 mb-5 h-96 w-52  overflow-clip bg-white border border-gray-200 rounded-lg shadow transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110  dark:border-gray-200">
           <Link to={`/productList`}>
             <img
               className={`rounded-t-lg h-52 w-52 object-fill object-cover`}

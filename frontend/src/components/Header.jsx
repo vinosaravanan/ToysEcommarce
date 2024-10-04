@@ -85,7 +85,7 @@ function Header() {
             </a>
          
             <Link to={'/login'}>
-            <button className="border-2 border-violet-900 text-violet-900 hover:bg-violet-900 hover:text-white rounded py-0  w-28">Login</button>
+            <button className="border-2 border-violet-900 text-violet-900 hover:bg-violet-900 hover:text-white rounded py-0 font-custom w-28">Login</button>
            </Link>
           </div>
 
@@ -107,23 +107,23 @@ function Header() {
         }`}>
           <div className="flex justify-end">
             <div className="flex flex-col w-28 px-2 pt-2 pb-3 space-y-1 sm:px-3">
-                <Link to={'/productList'} className="mr-3 py-1 font-bold" onClick={()=> setIsOpen(false)}>
+                <Link to={'/productList'} className="mr-3 py-1 text-sm text-violet-700 font-custom " onClick={()=> setIsOpen(false)}>
                    Products
                 </Link>
 
-              <Link className="mr-3" onClick={()=> setIsOpen(false)}>
+              <Link className="mr-3 font-bold hover:bg-violet-100" onClick={()=> setIsOpen(false)}>
                 Profile
               </Link>
              
-             <Link to={'/card'} className="mr-3 py-1" onClick={()=> setIsOpen(false)} >
+             <Link to={'/card'} className="mr-3 font-bold py-1  hover:bg-violet-100" onClick={()=> setIsOpen(false)} >
                 Card
               </Link>
 
-              <Link to={'/dashboard'} className="mr-3 py-1 " onClick={()=> setIsOpen(false)}>
+              <Link to={'/dashboard'} className="mr-3 py-1 font-bold  hover:bg-violet-100" onClick={()=> setIsOpen(false)}>
                 dasboard
               </Link>
 
-              <Link to={'/login'} className="mr-3 py-1" onClick={()=> setIsOpen(false)}>
+              <Link to={'/login'} className="mr-3 py-1 font-bold  hover:bg-violet-100" onClick={()=> setIsOpen(false)}>
                 Login
               </Link>
 

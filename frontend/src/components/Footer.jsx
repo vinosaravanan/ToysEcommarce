@@ -8,7 +8,7 @@ import { FaLinkedin } from "react-icons/fa6";
 
 const Footer = () => {
   return (
-    <div className='bg-green-50 h-96 mt-2 flex flex-col items-center md:flex-row'>
+    <div className='bg-green-50  h-96 mt-2 flex flex-col items-center md:flex-row'>
            <div className='mb-5 mt-5 md:mr-12 lg:w-64 font-custom text-center text-2xl'>
                 <h2>T<span className='text-violet-600'>O</span>YS SH<span className='text-violet-600'>O</span>P</h2>
            </div>

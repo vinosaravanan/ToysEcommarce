@@ -6,11 +6,12 @@ import Educationalimg from '../assets/img/CategoryImg/Educational.png'
 import Electronicimg from '../assets/img/CategoryImg/Electronic.png'
 import {Link} from 'react-router-dom'
 
+
 const ShopByinteRest = () => {
   return (
     <div className="mt-14 mb-28 flex justify-center items-center flex-col md:flex-row">
 
-      <div className="bg-gradient-to-r from-blue-400 via-blue-300 to-blue-400 w-36 h-28 mr-5  rounded-lg relative">
+      <div className="bg-gradient-to-r from-blue-400 via-blue-300 to-blue-400 w-36 h-28 mr-5  rounded-lg relative transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 ">
        <Link to={'/productList'}>
         <img
           src={sportimg}
@@ -25,7 +26,7 @@ const ShopByinteRest = () => {
 
       {/* 2 */}
 
-      <div className="bg-gradient-to-r from-yellow-300 via-yellow-100 to-yellow-300 w-36 h-28 mr-5 mt-20 rounded-lg relative md:mt-0">
+      <div className="bg-gradient-to-r from-yellow-300 via-yellow-100 to-yellow-300 w-36 h-28 mr-5 mt-20 rounded-lg relative md:mt-0 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 ">
       <Link to={'/productList'}>
         <img
           src={actionimg}
@@ -40,7 +41,7 @@ const ShopByinteRest = () => {
 
       {/* 3 */}
 
-      <div className="bg-gradient-to-r from-purple-300 via-purple-100 to-purple-300 w-36 h-28 mr-5 mt-14 rounded-lg relative md:mt-0">
+      <div className="bg-gradient-to-r from-purple-300 via-purple-100 to-purple-300 w-36 h-28 mr-5 mt-14 rounded-lg relative md:mt-0 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 ">
         <Link to={'/productList'}>
         <img
           src={constructionimg}
@@ -55,7 +56,7 @@ const ShopByinteRest = () => {
 
       {/* 4 */}
 
-      <div className="bg-gradient-to-r from-green-300 via-green-100 to-green-300 w-36 h-28 mr-5 mt-16  rounded-lg relative md:mt-0">
+      <div className="bg-gradient-to-r from-green-300 via-green-100 to-green-300 w-36 h-28 mr-5 mt-16  rounded-lg relative md:mt-0 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 ">
         <Link to={'/productList'}>
         <img
           src={Educationalimg}
@@ -69,7 +70,7 @@ const ShopByinteRest = () => {
       </div>
 
       {/* 5 */}
-      <div className="bg-gradient-to-r from-red-300 via-red-100 to-red-300 w-36 h-28 mr-5 mt-16 rounded-lg relative md:mt-0">
+      <div className="bg-gradient-to-r from-red-300 via-red-100 to-red-300 w-36 h-28 mr-5 mt-16 rounded-lg relative md:mt-0 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 ">
        
        <Link to={'/productList'}>
          <img
