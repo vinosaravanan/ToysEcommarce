@@ -22,7 +22,7 @@ export const AddToCard = createAsyncThunk(
           console.log('User token:', user?.token);
        
           const response = await axios.post(
-            'http://localhost:8080/api/v1/card',
+            'https://toys-ecommarce-backend.onrender.com/api/v1/card',
             { productId, quantity },
             {
               headers: {
