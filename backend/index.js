@@ -40,7 +40,7 @@ app.use('/api/v1', CardRouter)
 
 
 app.get('/', async (req, res) => {
-    res.send('hollo world')
+    res.send('hollo world but this render deploy')
 })
 
 
