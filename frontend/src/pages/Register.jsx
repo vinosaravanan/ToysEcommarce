@@ -9,6 +9,7 @@ function Register() {
     register,
     handleSubmit,
     formState: { errors },
+    reset
   } = useForm();
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -20,6 +21,9 @@ function Register() {
   const onSubmit = (data) => {
     console.log(data);
     dispatch(registerUserAsyn(data));
+
+    reset();
+
     navigate("/productList");
   };
 

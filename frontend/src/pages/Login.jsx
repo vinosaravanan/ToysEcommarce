@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { useForm } from "react-hook-form";
+import { useForm} from "react-hook-form";
 import { useSelector, useDispatch } from "react-redux";
 import {
   LoginUserAsyn,
@@ -13,6 +13,7 @@ function Login() {
     register,
     handleSubmit,
     formState: { errors },
+    reset
   } = useForm();
   const toke = useSelector(selectUserLoggedInUser);
   const dispatch = useDispatch();
@@ -24,7 +25,11 @@ function Login() {
 
   const onSubmit = (data) => {
     console.log(data);
+
     dispatch(LoginUserAsyn(data));
+ 
+    reset();
+
     navigate("/productList");
   };
 
