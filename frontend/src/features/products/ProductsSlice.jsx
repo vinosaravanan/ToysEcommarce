@@ -248,5 +248,6 @@ export const {setpage, clearProductDetails} = ProductsSlice.actions
 
 export const SelectAllproducts = (state) => state.product.products
 export const SelectproductDetails = (state) => state.product.productDetails
+export const SelectproductsLoading = (state) => state.product.status
 
 export default ProductsSlice.reducer
