@@ -116,7 +116,8 @@ function Header() {
               </Link>
              
              <Link to={'/card'} className="mr-3 font-bold py-1  hover:bg-violet-100" onClick={()=> setIsOpen(false)} >
-                Card
+                Card <span className="text-violet-600">{totalcardItems}</span>
+                
               </Link>
 
               <Link to={'/dashboard'} className="mr-3 py-1 font-bold  hover:bg-violet-100" onClick={()=> setIsOpen(false)}>
