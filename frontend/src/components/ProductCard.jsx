@@ -139,7 +139,15 @@ const ProductCard = () => {
                   </div>
                   {/* this for rating demo */}
 
-                  <h2 className="font-bold mb-2">₹{product.price}</h2>
+                  <h2 className="font-bold mb-2">₹{product.price}
+                  <span className="text-[15px] ml-3  dark:text-gray-500 line-through">
+                 ₹{product.price}
+               </span>
+                <span className="text-[17px] ml-1  dark:text-green-500">
+                  {product.discount}% off
+                </span>
+
+                  </h2>
 
                   <div className="flex justify-start items-center relative">
                     {/* <button className="border-2 border-violet-900 text-violet-900 hover:bg-violet-900 hover:text-white rounded absolute left-3 py-1 font-bold h-8 w-48">ADD TO CARD</button> */}
